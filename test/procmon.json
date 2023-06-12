@@ -1,0 +1,16 @@
+{
+    "processes":[
+        {
+            "id":"sleep1",
+            "exec":"sleep 18",
+            "wait":"1",
+            "monitored" : true
+        },
+        {
+            "id":"sleep2",
+            "exec":"sleep 60",
+            "wait":"1",
+            "monitored" : true
+        }
+    ]
+}
