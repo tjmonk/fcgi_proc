@@ -881,7 +881,7 @@ static int ProcessStartRequest( FCGIProcState *pState, char *query )
         result = ValidateProcName( query );
         if ( result == EOK )
         {
-            snprintf(cmd, BUFSIZ, "procmon -s %s", query );
+            snprintf(cmd, BUFSIZ, "/usr/local/bin/procmon -s %s", query );
             result = ExecuteCommand(cmd, false);
         }
     }
@@ -920,7 +920,7 @@ static int ProcessStopRequest( FCGIProcState *pState, char *query )
         result = ValidateProcName( query );
         if ( result == EOK )
         {
-            snprintf(cmd, BUFSIZ, "procmon -k %s", query );
+            snprintf(cmd, BUFSIZ, "/usr/local/bin/procmon -k %s", query );
             result = ExecuteCommand(cmd, false);
         }
     }
@@ -959,7 +959,7 @@ static int ProcessRestartRequest( FCGIProcState *pState, char *query )
         result = ValidateProcName( query );
         if ( result == EOK )
         {
-            snprintf(cmd, BUFSIZ, "procmon -r %s", query );
+            snprintf(cmd, BUFSIZ, "/usr/local/bin/procmon -r %s", query );
             result = ExecuteCommand(cmd, false);
         }
     }
@@ -990,7 +990,7 @@ static int ProcessRestartRequest( FCGIProcState *pState, char *query )
 static int ProcessListRequest( FCGIProcState *pState, char *query )
 {
     int result;
-    char *cmd = "procmon -o json";
+    char *cmd = "/usr/local/bin/procmon -o json";
 
     result = ExecuteCommand(cmd, true);
 
